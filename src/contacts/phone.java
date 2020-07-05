@@ -159,17 +159,20 @@ public class phone extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
         contact c=new contact();
         c.show();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         deletecontact d=new deletecontact();
+        dispose();
+        deletecontact d=new deletecontact();
          d.show();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        all a=new all();
+         dispose();
+         all a=new all();
         a.show();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -178,7 +181,7 @@ public class phone extends javax.swing.JFrame {
         {
            int x3=0;
         Class.forName("com.mysql.jdbc.Driver"); 
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","password");
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","");
         Statement stmt=con.createStatement();
         String sql="select *from mycontact";
         ResultSet rs=stmt.executeQuery(sql);
@@ -205,7 +208,7 @@ public class phone extends javax.swing.JFrame {
         try
         {
             Class.forName("com.mysql.jdbc.Driver"); 
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","password");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","");
             String sql="Select * from mycontact where name="+"'"+name+"'"+";";
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery(sql);
