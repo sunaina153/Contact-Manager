@@ -128,7 +128,7 @@ public class all extends javax.swing.JFrame {
         {
         Class.forName("com.mysql.jdbc.Driver"); 
         
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","password");
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","");
         String sql="select * FROM mycontact";
         Statement stmt=con.createStatement();
         ResultSet rs=stmt.executeQuery(sql);
@@ -164,6 +164,7 @@ public class all extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         dispose();
         phone ph=new phone();
         ph.show();
     }//GEN-LAST:event_jButton2ActionPerformed

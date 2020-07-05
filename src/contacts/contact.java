@@ -189,7 +189,7 @@ public class contact extends javax.swing.JFrame {
          try
         {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","password");
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phone","root","");
         String sql1="select * from mycontact where mobile='"+mobile+"'";
         Statement stmt=con.createStatement();
         ResultSet rs=stmt.executeQuery(sql1);
@@ -238,6 +238,7 @@ public class contact extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
         phone ph=new phone();
         ph.show();
     }//GEN-LAST:event_jButton2ActionPerformed
